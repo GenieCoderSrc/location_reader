@@ -2,7 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it_di_global_variable/get_it_di.dart';
+import 'package:location_reader/config/di/register_location_service_get_it_di.dart';
 import 'package:location_reader/location_reader.dart';
+import 'package:location_reader/views/widgets/country_code_loader.dart';
 
 void main() {
   registerLocationServiceGetItDi();
@@ -54,7 +57,7 @@ class LocationExamplePage extends StatelessWidget {
                     builder: (_) => AlertDialog(
                       title: const Text("Current Location"),
                       content: Text(
-                          'Lat: ${location.latitude}, Lng: ${location.longitude}'),
+                          'Lat: $location, Lng: $location'),
                     ),
                   ),
                 );
@@ -62,7 +65,7 @@ class LocationExamplePage extends StatelessWidget {
               child: const Text('Get Current Location'),
             ),
             const SizedBox(height: 24),
-            const CountryCodeLoader(
+            CountryCodeLoader(
               page: (code) => Text("Country Code: \$code"),
             ),
           ],
