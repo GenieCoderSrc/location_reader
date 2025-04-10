@@ -1,19 +1,17 @@
-// main.dart
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it_di_global_variable/get_it_di.dart';
 import 'package:location_reader/config/di/register_location_service_get_it_di.dart';
-import 'package:location_reader/location_reader.dart';
-import 'package:location_reader/views/widgets/country_code_loader.dart';
+import 'package:location_reader/location_reader.dart';  // Import the location_reader package
+import 'package:get_it/get_it.dart';
 
 void main() {
+  // Register dependencies
   registerLocationServiceGetItDi();
+
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,53 +20,59 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LocationExamplePage(),
+      home: const LocationScreen(),
     );
   }
 }
 
-class LocationExamplePage extends StatelessWidget {
-  const LocationExamplePage({super.key});
+class LocationScreen extends StatefulWidget {
+  const LocationScreen({Key? key}) : super(key: key);
+
+  @override
+  State<LocationScreen> createState() => _LocationScreenState();
+}
+
+class _LocationScreenState extends State<LocationScreen> {
+  String locationMessage = "Fetching location...";
+
+  @override
+  void initState() {
+    super.initState();
+    _getLocation();
+  }
+
+  Future<void> _getLocation() async {
+    final locationRepository = GetIt.I<ICurrentLocationRepository>();
+    final result = await locationRepository.getCurrentLocation();
+
+    result.fold(
+          (failure) {
+        setState(() {
+          locationMessage = "Error fetching location: ${failure.toString()}";
+        });
+      },
+          (location) {
+        setState(() {
+          locationMessage = "Current Location: \nLat: ${location.lat}, Lon: ${location.lon}";
+        });
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Location Reader Example')),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ElevatedButton(
-              onPressed: () async {
-                final getLocation = sl<GetCurrentLocation>();
-                final result = await getLocation();
-
-                result.fold(
-                      (failure) => showDialog(
-                    context: context,
-                    builder: (_) => AlertDialog(
-                      title: const Text("Error"),
-                      content: Text(failure.toString()),
-                    ),
-                  ),
-                      (location) => showDialog(
-                    context: context,
-                    builder: (_) => AlertDialog(
-                      title: const Text("Current Location"),
-                      content: Text(
-                          'Lat: $location, Lng: $location'),
-                    ),
-                  ),
-                );
-              },
-              child: const Text('Get Current Location'),
-            ),
-            const SizedBox(height: 24),
-            CountryCodeLoader(
-              page: (code) => Text("Country Code: \$code"),
-            ),
-          ],
+      appBar: AppBar(
+        title: const Text('Location Reader Example'),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Text(
+            locationMessage,
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 20),
+          ),
         ),
       ),
     );
