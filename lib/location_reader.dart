@@ -26,3 +26,5 @@ export 'package:location_reader/view_model/city_name_cubit/city_name_cubit.dart'
 export 'package:location_reader/view_model/country_code_cubit/country_code_cubit.dart';
 export 'package:location_reader/view_model/location_picker_cubit/location_picker_cubit.dart';
 export 'package:location_reader/views/widgets/location_picker.dart';
+export 'package:location_reader/data/data_sources/i_location_services/i_location_crud_service.dart';
+export 'package:location_reader/data/data_sources/location_firestore_crud_service_impl.dart';
