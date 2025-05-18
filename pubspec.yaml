@@ -1,6 +1,6 @@
 name: location_reader
 description: "A Flutter package for retrieving and handling location-related data, including current location, reverse geocoding, Firebase integration, location permission management, and nearby location queries."
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/GenieCoderSrc/location_reader
 repository: https://github.com/GenieCoderSrc/location_reader
 issue_tracker: https://github.com/GenieCoderSrc/location_reader/issues
