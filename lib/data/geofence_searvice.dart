@@ -91,7 +91,7 @@ class GeofenceService {
 
   /// Stop the geofencing service
   void stopGeofence() {
-    print("Stopping geofence service.");
+    debugPrint("Stopping geofence service.");
     geofenceStatusStream?.cancel();
     geofenceStatusStream = null; // Clear the subscription
   }
@@ -144,7 +144,7 @@ class GeofenceService {
                 ? "Inside Geofence"
                 : "Outside Geofence";
 
-            print("Geofence Status: $geofenceStatus");
+            debugPrint("Geofence Status: $geofenceStatus");
           }
         });
   }
