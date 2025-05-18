@@ -12,7 +12,6 @@ All notable changes to this project will be documented in this file.
 - create location Firestore Crud Service Impl File.
 - create I Location Permission Manager File.
 
-
 ## 0.0.1
 ### Added
 - Initial release of `location_reader`.
