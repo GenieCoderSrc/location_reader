@@ -1,4 +1,5 @@
 export 'package:location_reader/config/di/register_location_service_get_it_di.dart';
+export 'package:location_reader/config/bloc_provider/register_location_bloc_provider.dart';
 export 'package:location_reader/data/data_sources/address_service_impl.dart';
 export 'package:location_reader/data/data_sources/city_name_service_impl.dart';
 export 'package:location_reader/data/data_sources/country_code_service_impl.dart';
@@ -38,7 +39,6 @@ export 'package:location_reader/view_model/city_name_cubit/city_name_state.dart'
 export 'package:location_reader/view_model/country_code_cubit/country_code_cubit.dart';
 export 'package:location_reader/view_model/country_code_cubit/country_code_state.dart';
 export 'package:location_reader/view_model/location_picker_cubit/location_picker_cubit.dart';
-export 'package:location_reader/view_model/register_location_bloc_provider.dart';
 export 'package:location_reader/views/widgets/city_name_builder.dart';
 export 'package:location_reader/views/widgets/country_code_loader.dart';
 export 'package:location_reader/views/widgets/location_picker.dart';

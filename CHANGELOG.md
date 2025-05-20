@@ -2,8 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.4
+- Change Register Location Bloc Provider File.
+
 ## 0.0.3
-### Added
 - Added Register Location Bloc Provider.
 
 ## 0.0.2
