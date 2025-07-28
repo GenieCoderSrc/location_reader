@@ -64,6 +64,7 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:geoflutterfire_plus/geoflutterfire_plus.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -84,13 +85,13 @@ class GeofenceService {
     position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.best,
     );
-    print("LOCATION => ${position!.toJson()}");
+    debugPrint("LOCATION => ${position!.toJson()}");
     isReady = position != null;
   }
 
   /// Stop the geofencing service
   void stopGeofence() {
-    print("Stopping geofence service.");
+    debugPrint("Stopping geofence service.");
     geofenceStatusStream?.cancel();
     geofenceStatusStream = null; // Clear the subscription
   }
@@ -143,7 +144,7 @@ class GeofenceService {
                 ? "Inside Geofence"
                 : "Outside Geofence";
 
-            print("Geofence Status: $geofenceStatus");
+            debugPrint("Geofence Status: $geofenceStatus");
           }
         });
   }

@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.4
+- Change Register Location Bloc Provider File.
+
+## 0.0.3
+- Added Register Location Bloc Provider.
+
+## 0.0.2
+### Added
+- update export File.
+- create location Firestore Crud Service Impl File.
+- create I Location Permission Manager File.
+
 ## 0.0.1
 ### Added
 - Initial release of `location_reader`.
