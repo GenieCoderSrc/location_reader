@@ -19,8 +19,8 @@ dependencies:
     path: ../i_tdd
   get_it_di_global_variable:
     path: ../get_it_di_global_variable
-  navigation_wihout_context:
-    path: ../navigation_wihout_context
+  navigation_without_context:
+    path: ../navigation_without_context
 
 
   equatable: ^2.0.7
