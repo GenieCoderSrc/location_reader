@@ -27,7 +27,11 @@ disposeLocationBlocProvider() {
 
 List<SingleChildWidget> locationBlocProviders = [
   // ---- Location Cubit Bloc Provider ------
-  BlocProvider<LocationPickerCubit>(create: (BuildContext context) => _locationPickerCubit),
+  BlocProvider<LocationPickerCubit>(
+    create: (BuildContext context) => _locationPickerCubit,
+  ),
   BlocProvider<CityNameCubit>(create: (BuildContext context) => _cityNameCubit),
-  BlocProvider<CountryCodeCubit>(create: (BuildContext context) => _countryCodeCubit),
+  BlocProvider<CountryCodeCubit>(
+    create: (BuildContext context) => _countryCodeCubit,
+  ),
 ];

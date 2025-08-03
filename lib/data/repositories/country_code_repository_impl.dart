@@ -10,9 +10,10 @@ class CountryCodeRepositoryImpl extends ICountryCodeRepository {
   final ILocationServiceGeoLocatorProvider iLocationServiceGeoLocatorProvider;
   final ICountryCodeService iCountryCodeService;
 
-  CountryCodeRepositoryImpl(
-      {required this.iLocationServiceGeoLocatorProvider,
-      required this.iCountryCodeService});
+  CountryCodeRepositoryImpl({
+    required this.iLocationServiceGeoLocatorProvider,
+    required this.iCountryCodeService,
+  });
 
   @override
   Future<Either<IFailure, String>> getCountryCode() async {
@@ -20,17 +21,21 @@ class CountryCodeRepositoryImpl extends ICountryCodeRepository {
       late String? countryCode;
       final Position? currentLocation =
           await iLocationServiceGeoLocatorProvider.getLastKnownPosition() ??
-              await iLocationServiceGeoLocatorProvider.getCurrentLocation();
+          await iLocationServiceGeoLocatorProvider.getCurrentLocation();
 
       debugPrint(
-          'GeoLocationRepository | getCurrentCountryCode | currentLocation: $currentLocation');
+        'GeoLocationRepository | getCurrentCountryCode | currentLocation: $currentLocation',
+      );
 
       if (currentLocation != null) {
         countryCode = await iCountryCodeService.getCountryCode(
-            lat: currentLocation.latitude, lon: currentLocation.longitude);
+          lat: currentLocation.latitude,
+          lon: currentLocation.longitude,
+        );
       }
       debugPrint(
-          'GeoLocationRepository | getCurrentCountryCode | countryCode: $countryCode');
+        'GeoLocationRepository | getCurrentCountryCode | countryCode: $countryCode',
+      );
       return Right<LocationError, String>(countryCode ?? 'US');
     } catch (e) {
       debugPrint('GeoLocationRepository | getCurrentCountryCode | Error: $e');

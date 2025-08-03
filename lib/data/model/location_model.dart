@@ -10,15 +10,13 @@ part 'location_model.g.dart';
 @JsonSerializable(explicitToJson: true, includeIfNull: false)
 class LocationModel extends LocationEntity {
   @JsonKey(
-      fromJson: JsonGeoFirePointConverterUtils.fromJson,
-      toJson: JsonGeoFirePointConverterUtils.toJson)
+    fromJson: JsonGeoFirePointConverterUtils.fromJson,
+    toJson: JsonGeoFirePointConverterUtils.toJson,
+  )
   final GeoFirePoint? geofPoint;
 
-  LocationModel({
-    double? lat,
-    double? lon,
-    this.geofPoint,
-  }) : super(lat: geofPoint?.latitude ?? lat, lon: geofPoint?.longitude ?? lon);
+  LocationModel({double? lat, double? lon, this.geofPoint})
+    : super(lat: geofPoint?.latitude ?? lat, lon: geofPoint?.longitude ?? lon);
 
   factory LocationModel.fromJson(Map<String, dynamic> json) {
     double? lat = (json['lat'] as num?)?.toDouble();

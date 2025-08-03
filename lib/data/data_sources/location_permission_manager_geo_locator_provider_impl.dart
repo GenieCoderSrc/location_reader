@@ -17,7 +17,8 @@ class LocationPermissionManagerGeolocatorProviderImpl
     } catch (e) {
       // Handle error
       debugPrint(
-          'GeoLocatorPermissionManager | requestLocationPermission | Error handling location permission: $e');
+        'GeoLocatorPermissionManager | requestLocationPermission | Error handling location permission: $e',
+      );
       return false;
     }
   }
@@ -42,7 +43,8 @@ class LocationPermissionManagerGeolocatorProviderImpl
     } catch (e) {
       // Handle error
       debugPrint(
-          'GeoLocatorPermissionManager | checkLocationPermission | Error checking location permission: $e');
+        'GeoLocatorPermissionManager | checkLocationPermission | Error checking location permission: $e',
+      );
       return false;
     }
   }

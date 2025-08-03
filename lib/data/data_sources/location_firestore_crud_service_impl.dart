@@ -9,20 +9,22 @@ class LocationFireStoreCrudeServiceImpl implements ILocationCrudService {
   ILocationServiceGeoFirePointProvider iGeoFireLocationService;
   final IFireStoreDbService fireStoreDbService;
 
-  LocationFireStoreCrudeServiceImpl(
-      {required this.fireStoreDbService,
-      required this.iGeoFireLocationService});
+  LocationFireStoreCrudeServiceImpl({
+    required this.fireStoreDbService,
+    required this.iGeoFireLocationService,
+  });
 
   @override
-  Future<bool> updateLocation(
-      {required String id,
-      required String path,
-      String field = "position"}) async {
+  Future<bool> updateLocation({
+    required String id,
+    required String path,
+    String field = "position",
+  }) async {
     try {
       final GeoFirePoint? point =
           await iGeoFireLocationService.getCurrentLocation();
       final Map<String, dynamic> position = <String, dynamic>{
-        field: point?.data
+        field: point?.data,
       };
 
       return await fireStoreDbService.updateDocument(

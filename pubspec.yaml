@@ -1,6 +1,6 @@
 name: location_reader
 description: "A Flutter package for retrieving and handling location-related data, including current location, reverse geocoding, Firebase integration, location permission management, and nearby location queries."
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/GenieCoderSrc/location_reader
 repository: https://github.com/GenieCoderSrc/location_reader
 issue_tracker: https://github.com/GenieCoderSrc/location_reader/issues
@@ -19,8 +19,15 @@ dependencies:
     path: ../i_tdd
   get_it_di_global_variable:
     path: ../get_it_di_global_variable
+
   navigation_without_context:
     path: ../navigation_without_context
+  geoflutterfire_plus:
+    path: ../geoflutterfire_plus
+
+#  firestore_db_impl:
+#    path: ../firestore_db_impl
+#  geoflutterfire_plus: ^0.0.32
 
 
   equatable: ^2.0.7
@@ -29,10 +36,8 @@ dependencies:
   flutter_bloc: ^9.0.0
   #  rxdart: ^0.28.0
   json_annotation: ^4.9.0
-  firestore_db_impl: ^0.0.1
   #  geoflutterfire: ^3.0.3
   #  geoflutterfire2: ^2.3.15
-  geoflutterfire_plus: ^0.0.32
   #  flutter_geofire: ^2.0.3
   #  geoflutterfire_updated: ^3.1.0
   #  geoflutterfire: ^3.0.0
@@ -40,7 +45,9 @@ dependencies:
   geocoding: ^3.0.0
   #  geocoding: ^2.1.1
   #  easy_geofencing: ^0.2.0
-  cloud_firestore: ^5.6.2
+#  cloud_firestore: ^6.0.0
+#  cloud_firestore: ^5.6.2
+
   fluttertoast: ^8.2.10
   provider: ^6.1.5
 
@@ -48,7 +55,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
   build_runner: ^2.4.14
   json_serializable: ^6.9.3
 # For information on the generic Dart part of this file, see the

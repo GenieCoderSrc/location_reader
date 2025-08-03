@@ -11,15 +11,16 @@ class LocationServiceGeoFirePointProviderImpl
   final ILocationServiceGeoLocatorProvider iLocationServiceGeoLocatorProvider;
   final IGeoFirePointConverter iGeoFirePointConverter;
 
-  LocationServiceGeoFirePointProviderImpl(
-      {required this.iLocationServiceGeoLocatorProvider,
-        required this.iGeoFirePointConverter});
+  LocationServiceGeoFirePointProviderImpl({
+    required this.iLocationServiceGeoLocatorProvider,
+    required this.iGeoFirePointConverter,
+  });
 
   @override
   Future<GeoFirePoint?> getCurrentLocation() async {
     try {
       final Position? currentLocation =
-      await iLocationServiceGeoLocatorProvider.getCurrentLocation();
+          await iLocationServiceGeoLocatorProvider.getCurrentLocation();
 
       return iGeoFirePointConverter.getGeoFirePoint(currentLocation);
     } catch (e) {
@@ -33,7 +34,7 @@ class LocationServiceGeoFirePointProviderImpl
     try {
       final Position? currentLocation =
           await iLocationServiceGeoLocatorProvider.getLastKnownPosition() ??
-              await iLocationServiceGeoLocatorProvider.getCurrentLocation();
+          await iLocationServiceGeoLocatorProvider.getCurrentLocation();
 
       return iGeoFirePointConverter.getGeoFirePoint(currentLocation);
     } catch (e) {

@@ -16,27 +16,31 @@ class LocationPicker extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: InkWell(
         onTap:
-        onTap ?? () => context.read<LocationPickerCubit>().pickLocation(),
+            onTap ?? () => context.read<LocationPickerCubit>().pickLocation(),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text('Location: ', style: TextStyle(
-              // color: Colors.grey,
-              fontSize: 15.0,
-              color: Colors.blueGrey.shade600,
-              fontWeight: FontWeight.bold,
-            ),),
+            Text(
+              'Location: ',
+              style: TextStyle(
+                // color: Colors.grey,
+                fontSize: 15.0,
+                color: Colors.blueGrey.shade600,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.only(right: 12.0),
               child: BlocBuilder<LocationPickerCubit, LocationPickerState>(
                 buildWhen: (current, previous) => current != previous,
                 builder: (context, state) {
                   debugPrint(
-                      'LocationPicker | build | state:=> lat: ${state
-                          .locationEntity?.lat} ');
+                    'LocationPicker | build | state:=> lat: ${state.locationEntity?.lat} ',
+                  );
                   return CityNameBuilder(
-                      lat: lat ?? state.locationEntity?.lat,
-                      lon: lon ?? state.locationEntity?.lon);
+                    lat: lat ?? state.locationEntity?.lat,
+                    lon: lon ?? state.locationEntity?.lon,
+                  );
                 },
               ),
             ),

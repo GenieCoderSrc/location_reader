@@ -10,26 +10,29 @@ import 'country_code_state.dart';
 class CountryCodeCubit extends Cubit<CountryCodeState> {
   final GetCountryCode getCountryCode;
 
-  CountryCodeCubit({
-    required this.getCountryCode,
-  }) : super(const CountryCodeInitial());
+  CountryCodeCubit({required this.getCountryCode})
+    : super(const CountryCodeInitial());
 
   Future<String> loadCountryCode() async {
     late String countryCode;
     emit(const CountryCodeLoading());
-    final Either<IFailure, String> eitherResponse =
-        await getCountryCode(NoParams());
+    final Either<IFailure, String> eitherResponse = await getCountryCode(
+      NoParams(),
+    );
 
-    eitherResponse.fold((l) {
-      final String message = mapFailureToMessage(l);
-      debugPrint('init country code error: $message');
-      emit(CountryCodeError(message));
-      countryCode = 'US';
-    }, (r) {
-      debugPrint('init country code: $r');
-      emit(CountryCodeLoaded(r));
-      countryCode = r;
-    });
+    eitherResponse.fold(
+      (l) {
+        final String message = mapFailureToMessage(l);
+        debugPrint('init country code error: $message');
+        emit(CountryCodeError(message));
+        countryCode = 'US';
+      },
+      (r) {
+        debugPrint('init country code: $r');
+        emit(CountryCodeLoaded(r));
+        countryCode = r;
+      },
+    );
     return countryCode;
   }
 }

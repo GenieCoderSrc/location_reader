@@ -19,7 +19,8 @@ class CityNameRepositoryImpl extends ICityNameRepository {
 
   @override
   Future<Either<IFailure, String>> getCityName(
-      LocationEntity locationEntity) async {
+    LocationEntity locationEntity,
+  ) async {
     try {
       // LocationModel locationModel = LocationModel.fromJson(params);
       double? lat = locationEntity.lat;
@@ -34,8 +35,10 @@ class CityNameRepositoryImpl extends ICityNameRepository {
       }
 
       if (lat != null && lon != null) {
-        String? cityName =
-            await iCityNameService.getCityName(lat: lat, lon: lon);
+        String? cityName = await iCityNameService.getCityName(
+          lat: lat,
+          lon: lon,
+        );
         debugPrint('GeoLocationRepository | getCityName | cityName: $cityName');
         if (cityName != null) {
           return Right<LocationError, String>(cityName);
@@ -44,7 +47,8 @@ class CityNameRepositoryImpl extends ICityNameRepository {
       return Left<IFailure, String>(LocationFailure());
     } catch (e) {
       debugPrint(
-          'GeoLocationRepository | GeoLocationRepository | getCityName | Error: $e');
+        'GeoLocationRepository | GeoLocationRepository | getCityName | Error: $e',
+      );
       return Left<IFailure, String>(LocationFailure());
     }
   }

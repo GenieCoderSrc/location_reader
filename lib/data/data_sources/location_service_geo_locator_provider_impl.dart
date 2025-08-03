@@ -8,14 +8,16 @@ class LocationServiceGeoLocatorProviderImpl
     extends ILocationServiceGeoLocatorProvider {
   final ILocationPermissionManager iLocationPermissionManager;
 
-  LocationServiceGeoLocatorProviderImpl(
-      {required this.iLocationPermissionManager});
+  LocationServiceGeoLocatorProviderImpl({
+    required this.iLocationPermissionManager,
+  });
 
   @override
-  Future<Position?> getCurrentLocation(
-      {LocationAccuracy desiredAccuracy = LocationAccuracy.best,
-      bool forceAndroidLocationManager = false,
-      Duration? timeLimit}) async {
+  Future<Position?> getCurrentLocation({
+    LocationAccuracy desiredAccuracy = LocationAccuracy.best,
+    bool forceAndroidLocationManager = false,
+    Duration? timeLimit,
+  }) async {
     try {
       bool serviceEnabled =
           await iLocationPermissionManager.checkLocationPermission();
@@ -36,11 +38,13 @@ class LocationServiceGeoLocatorProviderImpl
   }
 
   @override
-  Future<Position?> getLastKnownPosition(
-      {bool forceAndroidLocationManager = true}) async {
+  Future<Position?> getLastKnownPosition({
+    bool forceAndroidLocationManager = true,
+  }) async {
     try {
       return await Geolocator.getLastKnownPosition(
-          forceAndroidLocationManager: forceAndroidLocationManager);
+        forceAndroidLocationManager: forceAndroidLocationManager,
+      );
     } catch (e) {
       return null;
     }

@@ -11,6 +11,6 @@ class GeoPointUtils {
       <String, dynamic>{
         "data": geoPoint?.data,
         "latitude": geoPoint?.latitude,
-        "longitude": geoPoint?.longitude
+        "longitude": geoPoint?.longitude,
       };
 }

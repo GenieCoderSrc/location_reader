@@ -11,7 +11,8 @@ LocationModel _$LocationModelFromJson(Map<String, dynamic> json) =>
       lat: (json['lat'] as num?)?.toDouble(),
       lon: (json['lon'] as num?)?.toDouble(),
       geofPoint: JsonGeoFirePointConverterUtils.fromJson(
-          json['geofPoint'] as Map<String, dynamic>?),
+        json['geofPoint'] as Map<String, dynamic>?,
+      ),
     );
 
 Map<String, dynamic> _$LocationModelToJson(LocationModel instance) {

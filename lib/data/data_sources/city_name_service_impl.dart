@@ -5,8 +5,10 @@ import 'i_location_services/i_city_name_service.dart';
 
 class CityNameServiceImpl extends ICityNameService {
   @override
-  Future<String?> getCityName(
-      {required double lat, required double lon}) async {
+  Future<String?> getCityName({
+    required double lat,
+    required double lon,
+  }) async {
     try {
       final Placemark placeMark =
           (await placemarkFromCoordinates(lat, lon)).first;
@@ -31,8 +33,10 @@ class CityNameServiceImpl extends ICityNameService {
         country,
       ];
 
-      final String cityName = locationParts
-          .firstWhere((part) => part.isNotEmpty, orElse: () => address);
+      final String cityName = locationParts.firstWhere(
+        (part) => part.isNotEmpty,
+        orElse: () => address,
+      );
 
       debugPrint('CityNameServiceImpl | getCityName | cityName: $cityName');
       return cityName;

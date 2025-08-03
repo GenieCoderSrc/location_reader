@@ -110,11 +110,12 @@ class GeofenceService {
 
     // Create a GeoFirePoint from the current or provided coordinates
     GeoFirePoint center = GeoFirePoint(
-        GeoPoint(lat ?? position!.latitude, lon ?? position!.longitude));
+      GeoPoint(lat ?? position!.latitude, lon ?? position!.longitude),
+    );
 
     // Reference to Firestore collection where geofences will be stored
     CollectionReference<Map<String, dynamic>> collectionReference =
-    FirebaseFirestore.instance.collection('geofences');
+        FirebaseFirestore.instance.collection('geofences');
 
     // Adding geofence data to Firestore
     await collectionReference.add({
@@ -129,23 +130,25 @@ class GeofenceService {
 
   /// Check the stream of geofence status updates
   void checkGeofenceStream(GeoFirePoint center, double radius) {
-    geofenceStatusStream =
-        Stream.periodic(Duration(seconds: 5)).listen((_) async {
-          if (position != null) {
-            double distanceInMeters = Geolocator.distanceBetween(
-              position!.latitude,
-              position!.longitude,
-              center.latitude,
-              center.longitude,
-            );
+    geofenceStatusStream = Stream.periodic(Duration(seconds: 5)).listen((
+      _,
+    ) async {
+      if (position != null) {
+        double distanceInMeters = Geolocator.distanceBetween(
+          position!.latitude,
+          position!.longitude,
+          center.latitude,
+          center.longitude,
+        );
 
-            // Update geofence status based on distance
-            geofenceStatus = (distanceInMeters <= radius)
+        // Update geofence status based on distance
+        geofenceStatus =
+            (distanceInMeters <= radius)
                 ? "Inside Geofence"
                 : "Outside Geofence";
 
-            debugPrint("Geofence Status: $geofenceStatus");
-          }
-        });
+        debugPrint("Geofence Status: $geofenceStatus");
+      }
+    });
   }
 }

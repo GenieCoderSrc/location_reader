@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.5
+- Removed `LoadingCubit` dependency.
+
 ## 0.0.4
 - Change Register Location Bloc Provider File.
 

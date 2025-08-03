@@ -34,28 +34,44 @@ void registerLocationServiceGetItDi() {
   sl.registerLazySingleton<ICityNameService>(() => CityNameServiceImpl());
   sl.registerLazySingleton<ICountryCodeService>(() => CountryCodeServiceImpl());
   sl.registerLazySingleton<ILocationPermissionManager>(
-      () => LocationPermissionManagerGeolocatorProviderImpl());
+    () => LocationPermissionManagerGeolocatorProviderImpl(),
+  );
   sl.registerLazySingleton<IGeoFirePointConverter>(
-      () => GeoFirePointConverterImpl());
+    () => GeoFirePointConverterImpl(),
+  );
 
-  sl.registerLazySingleton<ILocationServiceGeoFirePointProvider>(() =>
-      LocationServiceGeoFirePointProviderImpl(
-          iLocationServiceGeoLocatorProvider: sl(),
-          iGeoFirePointConverter: sl()));
+  sl.registerLazySingleton<ILocationServiceGeoFirePointProvider>(
+    () => LocationServiceGeoFirePointProviderImpl(
+      iLocationServiceGeoLocatorProvider: sl(),
+      iGeoFirePointConverter: sl(),
+    ),
+  );
 
-  sl.registerLazySingleton<ILocationServiceGeoLocatorProvider>(() =>
-      LocationServiceGeoLocatorProviderImpl(iLocationPermissionManager: sl()));
+  sl.registerLazySingleton<ILocationServiceGeoLocatorProvider>(
+    () =>
+        LocationServiceGeoLocatorProviderImpl(iLocationPermissionManager: sl()),
+  );
   sl.registerLazySingleton<INearbyLocationService>(
-      () => NearbyLocationService());
+    () => NearbyLocationService(),
+  );
 
   /// ------ Repository -----
-  sl.registerLazySingleton<ICurrentLocationRepository>(() =>
-      CurrentLocationRepositoryImpl(iLocationServiceGeoLocatorProvider: sl()));
-  sl.registerLazySingleton<ICityNameRepository>(() => CityNameRepositoryImpl(
-      iCityNameService: sl(), iLocationServiceGeoLocatorProvider: sl()));
-  sl.registerLazySingleton<ICountryCodeRepository>(() =>
-      CountryCodeRepositoryImpl(
-          iLocationServiceGeoLocatorProvider: sl(), iCountryCodeService: sl()));
+  sl.registerLazySingleton<ICurrentLocationRepository>(
+    () =>
+        CurrentLocationRepositoryImpl(iLocationServiceGeoLocatorProvider: sl()),
+  );
+  sl.registerLazySingleton<ICityNameRepository>(
+    () => CityNameRepositoryImpl(
+      iCityNameService: sl(),
+      iLocationServiceGeoLocatorProvider: sl(),
+    ),
+  );
+  sl.registerLazySingleton<ICountryCodeRepository>(
+    () => CountryCodeRepositoryImpl(
+      iLocationServiceGeoLocatorProvider: sl(),
+      iCountryCodeService: sl(),
+    ),
+  );
 
   /// ------ Use Cases -----
   sl.registerLazySingleton<GetCityName>(() => GetCityName(sl()));
@@ -63,9 +79,9 @@ void registerLocationServiceGetItDi() {
   sl.registerLazySingleton<GetCurrentLocation>(() => GetCurrentLocation(sl()));
 
   // View Models
-  sl.registerLazySingleton(
-      () => LocationPickerCubit(getCurrentLocation: sl(), loadingCubit: sl()));
+  sl.registerLazySingleton(() => LocationPickerCubit(getCurrentLocation: sl()));
   sl.registerFactory(
-      () => CityNameCubit(getCityName: sl(), locationPickerCubit: sl()));
+    () => CityNameCubit(getCityName: sl(), locationPickerCubit: sl()),
+  );
   sl.registerFactory(() => CountryCodeCubit(getCountryCode: sl()));
 }

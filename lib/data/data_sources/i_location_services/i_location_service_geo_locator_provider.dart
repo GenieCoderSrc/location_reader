@@ -7,6 +7,7 @@ abstract class ILocationServiceGeoLocatorProvider {
     Duration? timeLimit,
   });
 
-  Future<Position?> getLastKnownPosition(
-      {bool forceAndroidLocationManager = false});
+  Future<Position?> getLastKnownPosition({
+    bool forceAndroidLocationManager = false,
+  });
 }

@@ -13,10 +13,8 @@ class CityNameCubit extends Cubit<CityNameState> {
 
   final LocationPickerCubit locationPickerCubit;
 
-  CityNameCubit({
-    required this.getCityName,
-    required this.locationPickerCubit,
-  }) : super(const CityNameInitial());
+  CityNameCubit({required this.getCityName, required this.locationPickerCubit})
+    : super(const CityNameInitial());
 
   Future<void> loadCityName({double? lat, double? lon}) async {
     emit(const CityNameLoading());
@@ -29,8 +27,9 @@ class CityNameCubit extends Cubit<CityNameState> {
       lon = locationEntity?.lon;
     }
 
-    final Either<IFailure, String> eitherResponse =
-        await getCityName(LocationEntity(lat: lat, lon: lon));
+    final Either<IFailure, String> eitherResponse = await getCityName(
+      LocationEntity(lat: lat, lon: lon),
+    );
 
     // check report
     eitherResponse.handleReport(

@@ -8,8 +8,9 @@ import 'package:location_reader/domain/i_repository/i_current_location_repositor
 class CurrentLocationRepositoryImpl extends ICurrentLocationRepository {
   final ILocationServiceGeoLocatorProvider iLocationServiceGeoLocatorProvider;
 
-  CurrentLocationRepositoryImpl(
-      {required this.iLocationServiceGeoLocatorProvider});
+  CurrentLocationRepositoryImpl({
+    required this.iLocationServiceGeoLocatorProvider,
+  });
 
   @override
   Future<Either<IFailure, LocationEntity>> getCurrentLocation() async {
@@ -18,7 +19,8 @@ class CurrentLocationRepositoryImpl extends ICurrentLocationRepository {
           await iLocationServiceGeoLocatorProvider.getCurrentLocation();
       if (position != null) {
         return Right(
-            LocationEntity(lat: position.latitude, lon: position.longitude));
+          LocationEntity(lat: position.latitude, lon: position.longitude),
+        );
       }
       return const Left(LocationError(LocationErrorType.permissionDenied));
     } catch (e) {

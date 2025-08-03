@@ -48,26 +48,26 @@ class NearbyLocationService implements INearbyLocationService {
   }) {
     // Create a GeoCollectionReference from the provided FireStore query's collection
     final CollectionReference<Map<String, dynamic>> collectionReference =
-    ref.getCollection();
+        ref.getCollection();
 
     // Function to get GeoPoint instance from Cloud Firestore document data
     GeoPoint geopointFrom(Map<String, dynamic> data) {
       return (data[positionField] as Map<String, dynamic>)['geopoint']
-      as GeoPoint;
+          as GeoPoint;
     }
 
     // Create a GeoCollectionReference
     GeoCollectionReference<Map<String, dynamic>> geoCollectionRef =
-    GeoCollectionReference<Map<String, dynamic>>(collectionReference);
+        GeoCollectionReference<Map<String, dynamic>>(collectionReference);
 
     // Stream of document snapshots of geo query under given conditions
     final Stream<List<DocumentSnapshot<Map<String, dynamic>>>> stream =
-    geoCollectionRef.subscribeWithin(
-      center: center,
-      radiusInKm: radius,
-      field: positionField,
-      geopointFrom: geopointFrom,
-    );
+        geoCollectionRef.subscribeWithin(
+          center: center,
+          radiusInKm: radius,
+          field: positionField,
+          geopointFrom: geopointFrom,
+        );
 
     // Transform the stream to return a list of maps
     return stream.map((snapshots) {
@@ -88,7 +88,7 @@ extension QueryExtensions<T> on Query<T> {
     // Assuming that the Query was created from a CollectionReference
     if (this is Query<Map<String, dynamic>>) {
       return (this as dynamic).parent
-      as CollectionReference<T>; // Use dynamic to bypass type checks
+          as CollectionReference<T>; // Use dynamic to bypass type checks
     }
     throw Exception('The provided query is not from a collection reference.');
   }
