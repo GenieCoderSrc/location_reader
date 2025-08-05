@@ -1,4 +1,4 @@
-# melos_managed_dependency_overrides: app_toast,dart_data_type_parser,exception_type,firestore_db_impl,get_it_di_global_variable,i_tdd,language_translator,navigation_without_context
+# melos_managed_dependency_overrides: app_toast,exception_type,get_it_di_global_variable,i_tdd,navigation_without_context,geoflutterfire_plus,dart_data_type_parser,firestore_db_impl,language_translator
 dependency_overrides:
   app_toast:
     path: ../app_toast
@@ -8,6 +8,8 @@ dependency_overrides:
     path: ../exception_type
   firestore_db_impl:
     path: ../firestore_db_impl
+  geoflutterfire_plus:
+    path: ../geoflutterfire_plus
   get_it_di_global_variable:
     path: ../get_it_di_global_variable
   i_tdd:

@@ -19,8 +19,8 @@ class LocationServiceGeoLocatorProviderImpl
     Duration? timeLimit,
   }) async {
     try {
-      bool serviceEnabled =
-          await iLocationPermissionManager.checkLocationPermission();
+      bool serviceEnabled = await iLocationPermissionManager
+          .checkLocationPermission();
 
       if (serviceEnabled) {
         return await Geolocator.getCurrentPosition(

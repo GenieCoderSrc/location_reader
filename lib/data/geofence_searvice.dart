@@ -142,10 +142,9 @@ class GeofenceService {
         );
 
         // Update geofence status based on distance
-        geofenceStatus =
-            (distanceInMeters <= radius)
-                ? "Inside Geofence"
-                : "Outside Geofence";
+        geofenceStatus = (distanceInMeters <= radius)
+            ? "Inside Geofence"
+            : "Outside Geofence";
 
         debugPrint("Geofence Status: $geofenceStatus");
       }

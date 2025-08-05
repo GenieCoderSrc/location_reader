@@ -21,29 +21,28 @@ class CityNameBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return lat != null && lon != null
         ? BlocBuilder<CityNameCubit, CityNameState>(
-          bloc: BlocProvider.of<CityNameCubit>(context)
-            ..loadCityName(lat: lat, lon: lon),
-          buildWhen:
-              (previous, current) =>
-                  previous != current && current is CityNameLoaded,
-          builder: (context, state) {
-            debugPrint('CityNameBuilder state: ${state.props}');
-            if (state is CityNameLoaded) {
-              return Text(
-                state.cityName,
-                style:
-                    textStyle ??
-                    TextStyle(
-                      // color: Colors.grey,
-                      fontSize: 15.0,
-                      color: Colors.blueGrey.shade600,
-                      fontWeight: FontWeight.bold,
-                    ),
-              );
-            }
-            return const Text('loading...');
-          },
-        )
+            bloc: BlocProvider.of<CityNameCubit>(context)
+              ..loadCityName(lat: lat, lon: lon),
+            buildWhen: (previous, current) =>
+                previous != current && current is CityNameLoaded,
+            builder: (context, state) {
+              debugPrint('CityNameBuilder state: ${state.props}');
+              if (state is CityNameLoaded) {
+                return Text(
+                  state.cityName,
+                  style:
+                      textStyle ??
+                      TextStyle(
+                        // color: Colors.grey,
+                        fontSize: 15.0,
+                        color: Colors.blueGrey.shade600,
+                        fontWeight: FontWeight.bold,
+                      ),
+                );
+              }
+              return const Text('loading...');
+            },
+          )
         : Icon(Icons.location_on_outlined, color: locationIconColor);
   }
 }

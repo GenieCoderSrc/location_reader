@@ -15,8 +15,8 @@ class CurrentLocationRepositoryImpl extends ICurrentLocationRepository {
   @override
   Future<Either<IFailure, LocationEntity>> getCurrentLocation() async {
     try {
-      Position? position =
-          await iLocationServiceGeoLocatorProvider.getCurrentLocation();
+      Position? position = await iLocationServiceGeoLocatorProvider
+          .getCurrentLocation();
       if (position != null) {
         return Right(
           LocationEntity(lat: position.latitude, lon: position.longitude),

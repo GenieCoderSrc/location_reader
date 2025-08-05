@@ -21,8 +21,8 @@ class LocationFireStoreCrudeServiceImpl implements ILocationCrudService {
     String field = "position",
   }) async {
     try {
-      final GeoFirePoint? point =
-          await iGeoFireLocationService.getCurrentLocation();
+      final GeoFirePoint? point = await iGeoFireLocationService
+          .getCurrentLocation();
       final Map<String, dynamic> position = <String, dynamic>{
         field: point?.data,
       };

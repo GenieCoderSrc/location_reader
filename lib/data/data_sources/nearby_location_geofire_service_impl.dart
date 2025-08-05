@@ -47,8 +47,8 @@ class NearbyLocationService implements INearbyLocationService {
     bool strictMode = false,
   }) {
     // Create a GeoCollectionReference from the provided FireStore query's collection
-    final CollectionReference<Map<String, dynamic>> collectionReference =
-        ref.getCollection();
+    final CollectionReference<Map<String, dynamic>> collectionReference = ref
+        .getCollection();
 
     // Function to get GeoPoint instance from Cloud Firestore document data
     GeoPoint geopointFrom(Map<String, dynamic> data) {

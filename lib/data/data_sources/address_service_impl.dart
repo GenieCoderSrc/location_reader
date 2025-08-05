@@ -10,8 +10,10 @@ class AddressServiceImpl extends IAddressService {
     required double lon,
   }) async {
     try {
-      final Placemark placeMark =
-          (await placemarkFromCoordinates(lat, lon)).first;
+      final Placemark placeMark = (await placemarkFromCoordinates(
+        lat,
+        lon,
+      )).first;
       debugPrint(
         'AddressServiceImpl | getAddress | address : ${placeMark.toString()}',
       );

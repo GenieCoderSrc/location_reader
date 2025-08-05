@@ -20,10 +20,9 @@ class LocationPickerCubit extends Cubit<LocationPickerState> {
     result.handleReport(
       successMsg: 'Location Picked Successfully!',
       onSuccess: (location) => emit(state.copyWith(locationEntity: location)),
-      onFailed:
-          (msg) => emit(
-            state.copyWith(reportMsg: "$msg!\nPlease! Enable GPS permission"),
-          ),
+      onFailed: (msg) => emit(
+        state.copyWith(reportMsg: "$msg!\nPlease! Enable GPS permission"),
+      ),
       isDisplayFailedMsg: true,
     );
   }

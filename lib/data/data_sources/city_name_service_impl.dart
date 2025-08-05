@@ -10,8 +10,10 @@ class CityNameServiceImpl extends ICityNameService {
     required double lon,
   }) async {
     try {
-      final Placemark placeMark =
-          (await placemarkFromCoordinates(lat, lon)).first;
+      final Placemark placeMark = (await placemarkFromCoordinates(
+        lat,
+        lon,
+      )).first;
 
       final String name = placeMark.name ?? '';
       final String subLocality = placeMark.subLocality?.trim() ?? '';

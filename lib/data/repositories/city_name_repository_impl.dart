@@ -27,8 +27,8 @@ class CityNameRepositoryImpl extends ICityNameRepository {
       double? lon = locationEntity.lon;
 
       if (lat == null || lon == null) {
-        Position? position =
-            await iLocationServiceGeoLocatorProvider.getCurrentLocation();
+        Position? position = await iLocationServiceGeoLocatorProvider
+            .getCurrentLocation();
 
         lat = position?.latitude;
         lon = position?.longitude;
