@@ -17,7 +17,7 @@ class LocationServiceGeoFirePointProviderImpl
   });
 
   @override
-  Future<GeoFirePoint?> getCurrentLocation() async {
+  Future<GeoLatLon?> getCurrentLocation() async {
     try {
       final Position? currentLocation = await iLocationServiceGeoLocatorProvider
           .getCurrentLocation();

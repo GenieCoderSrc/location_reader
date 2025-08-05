@@ -13,19 +13,13 @@ dependencies:
   flutter:
     sdk: flutter
 
-  exception_type:
-    path: ../exception_type
-  i_tdd:
-    path: ../i_tdd
-  get_it_di_global_variable:
-    path: ../get_it_di_global_variable
+  exception_type: ^0.0.3
+  i_tdd: ^0.0.2
+  get_it_di_global_variable: ^0.0.5
 
-  navigation_without_context:
-    path: ../navigation_without_context
-  firestore_db_impl:
-    path: ../firestore_db_impl
-  geoflutterfire_plus:
-    path: ../geoflutterfire_plus
+  navigation_without_context: ^0.0.3+1
+  firestore_db_impl: ^0.0.2+1
+  geo_lat_lon: ^0.0.1
 
 #  geoflutterfire_plus: ^0.0.32
 
