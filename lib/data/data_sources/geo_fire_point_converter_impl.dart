@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
-import 'package:geoflutterfire_plus/geoflutterfire_plus.dart';
+import 'package:geo_lat_lon/geo_lat_lon.dart';
 import 'package:geolocator/geolocator.dart';
 
 import 'i_location_services/i_geo_fire_point_converter.dart';
@@ -29,7 +29,7 @@ class GeoFirePointConverterImpl extends IGeoFirePointConverter {
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:flutter/foundation.dart';
 // import 'package:geoflutterfire2/geoflutterfire2.dart';
-// import 'package:geoflutterfire_plus/geoflutterfire_plus.dart';
+// import 'package:geo_lat_lon/geo_fire_point.dart';
 // import 'package:geolocator/geolocator.dart';
 //
 // import 'i_location_services/i_geo_fire_point_converter.dart';

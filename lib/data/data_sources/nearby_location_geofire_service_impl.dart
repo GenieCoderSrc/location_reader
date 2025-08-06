@@ -33,7 +33,7 @@
 // }
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:geoflutterfire_plus/geoflutterfire_plus.dart';
+import 'package:geo_lat_lon/geo_lat_lon.dart';
 
 import 'i_location_services/i_nearby_location_service.dart';
 

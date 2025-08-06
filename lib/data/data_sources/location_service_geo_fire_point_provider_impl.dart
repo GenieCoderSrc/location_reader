@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:geoflutterfire_plus/geoflutterfire_plus.dart';
+import 'package:geo_lat_lon/geo_lat_lon.dart';
 import 'package:geolocator/geolocator.dart';
 
 import 'i_location_services/i_geo_fire_point_converter.dart';
@@ -17,7 +17,7 @@ class LocationServiceGeoFirePointProviderImpl
   });
 
   @override
-  Future<GeoLatLon?> getCurrentLocation() async {
+  Future<GeoFirePoint?> getCurrentLocation() async {
     try {
       final Position? currentLocation = await iLocationServiceGeoLocatorProvider
           .getCurrentLocation();

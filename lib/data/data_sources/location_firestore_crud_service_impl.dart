@@ -1,6 +1,6 @@
 import 'package:firestore_db_impl/firestore_db_impl.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:geoflutterfire_plus/geoflutterfire_plus.dart';
+import 'package:geo_lat_lon/geo_lat_lon.dart';
 import 'package:location_reader/data/data_sources/i_location_services/i_location_crud_service.dart';
 
 import 'i_location_services/i_location_service_geo_fire_point_provider.dart';

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
-import 'package:geoflutterfire_plus/geoflutterfire_plus.dart';
+import 'package:geo_lat_lon/geo_lat_lon.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:location_reader/domain/entities/location_entity.dart';
 import 'package:location_reader/utils/convert_geo_fire_point.dart';

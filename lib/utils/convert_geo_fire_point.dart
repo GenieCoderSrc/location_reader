@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:geoflutterfire_plus/geoflutterfire_plus.dart';
+import 'package:geo_lat_lon/geo_lat_lon.dart';
 
 class JsonGeoFirePointConverterUtils {
   static GeoFirePoint? fromJsonGeoPoint(GeoFirePoint? geoPoint) => geoPoint;

@@ -1,4 +1,4 @@
-import 'package:geoflutterfire_plus/geoflutterfire_plus.dart';
+import 'package:geo_lat_lon/geo_lat_lon.dart';
 import 'package:geolocator/geolocator.dart';
 
 abstract class IGeoFirePointConverter {
