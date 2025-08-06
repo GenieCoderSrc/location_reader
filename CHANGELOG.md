@@ -3,22 +3,32 @@
 All notable changes to this project will be documented in this file.
 
 ## 0.0.5
+
+### Aug 6, 2025
+
+- Updated `geo_lat_lon` dependency to `^0.0.3`.
 - Removed `LoadingCubit` dependency.
 
 ## 0.0.4
+
 - Change Register Location Bloc Provider File.
 
 ## 0.0.3
+
 - Added Register Location Bloc Provider.
 
 ## 0.0.2
+
 ### Added
+
 - update export File.
 - create location Firestore Crud Service Impl File.
 - create I Location Permission Manager File.
 
 ## 0.0.1
+
 ### Added
+
 - Initial release of `location_reader`.
 - Support for retrieving current location using `Geolocator`.
 - Reverse geocoding (latitude/longitude to city/country) using `geocoding`.

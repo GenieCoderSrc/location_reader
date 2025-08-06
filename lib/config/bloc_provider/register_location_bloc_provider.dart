@@ -11,14 +11,14 @@ late LocationPickerCubit _locationPickerCubit;
 late CityNameCubit _cityNameCubit;
 late CountryCodeCubit _countryCodeCubit;
 
-initLocationBlocProvider() {
+void initLocationBlocProvider() {
   // ---- Location Cubit Init ------
   _locationPickerCubit = sl<LocationPickerCubit>();
   _cityNameCubit = sl<CityNameCubit>();
   _countryCodeCubit = sl<CountryCodeCubit>();
 }
 
-disposeLocationBlocProvider() {
+void disposeLocationBlocProvider() {
   // ---- Location Cubit Dispose ------
   _locationPickerCubit.close();
   _cityNameCubit.close();

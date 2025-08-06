@@ -20,7 +20,7 @@ dependencies:
   navigation_without_context: ^0.0.3+1
   firestore_db_impl: ^0.0.2+1
   cloud_firestore: ^6.0.0
-  geo_lat_lon: ^0.0.2
+  geo_lat_lon: ^0.0.3
 
 #  geoflutterfire_plus: ^0.0.32
 

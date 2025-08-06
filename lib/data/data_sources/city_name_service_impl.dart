@@ -46,6 +46,5 @@ class CityNameServiceImpl extends ICityNameService {
       debugPrint('CityNameServiceImpl | getCityName | error: $e');
       return null;
     }
-    return null;
   }
 }
