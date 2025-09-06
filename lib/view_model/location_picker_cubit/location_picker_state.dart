@@ -21,8 +21,6 @@ class LocationPickerState extends Equatable {
     isLoading: isLoading ?? this.isLoading,
   );
 
-  LocationPickerState clear() => const LocationPickerState();
-
   @override
   List<Object?> get props => [locationEntity, reportMsg, isLoading];
 }

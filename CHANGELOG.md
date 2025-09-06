@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.7
+
+### Aug 26, 2025
+
+### ✨ Added
+
+- Added `clear` method on LocationPickerCubit
+
 ## 0.0.6
 
 ### Aug 22, 2025

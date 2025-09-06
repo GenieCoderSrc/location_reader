@@ -26,4 +26,6 @@ class LocationPickerCubit extends Cubit<LocationPickerState> {
       isDisplayFailedMsg: true,
     );
   }
+
+  void clear() => emit(const LocationPickerState());
 }
