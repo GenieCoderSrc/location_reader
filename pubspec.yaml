@@ -17,14 +17,14 @@ dependencies:
   i_tdd: ^0.0.3
   get_it_di_global_variable: ^0.0.6
   navigation_without_context: ^0.0.4
-  firestore_db_impl: ^0.0.4
-  geo_lat_lon: ^0.0.4
+  firestore_db_impl: ^0.0.5
+  geo_lat_lon: ^0.0.5
 
 
 #  geoflutterfire_plus: ^0.0.32
 
   equatable: ^2.0.7
-  cloud_firestore: ^6.0.0
+  cloud_firestore: ^6.0.1
   dartz: ^0.10.1
   bloc: ^9.0.0
   flutter_bloc: ^9.1.1
@@ -39,8 +39,8 @@ dependencies:
   geocoding: ^4.0.0
   #  geocoding: ^2.1.1
   #  easy_geofencing: ^0.2.0
-#  cloud_firestore: ^6.0.0
-#  cloud_firestore: ^6.0.0
+#  cloud_firestore: ^6.0.1
+#  cloud_firestore: ^6.0.1
 
   fluttertoast: ^8.2.12
   provider:   ^6.1.5+1

@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 ### ✨ Added
 
 - Added `clear` method on LocationPickerCubit
+- Updated `cloud_firestore` to 6.0.1
 
 ## 0.0.6
 
@@ -24,8 +25,6 @@ All notable changes to this project will be documented in this file.
 - Updated `geo_lat_lon` to 0.0.4
 - Removed `flutter_lints` Dependency
 - Updated Dart sdk to 3.9.0
-
-
 
 ## 0.0.5
 
