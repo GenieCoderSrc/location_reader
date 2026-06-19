@@ -1,6 +1,6 @@
 name: location_reader
 description: "A Flutter package for retrieving and handling location-related data, including current location, reverse geocoding, Firebase integration, location permission management, and nearby location queries."
-version: 0.0.7
+version: 0.0.8
 homepage: https://github.com/GenieCoderSrc/location_reader
 repository: https://github.com/GenieCoderSrc/location_reader
 issue_tracker: https://github.com/GenieCoderSrc/location_reader/issues
@@ -15,16 +15,16 @@ dependencies:
 
   exception_type: ^0.0.5
   i_tdd: ^0.0.4
-  get_it_di_global_variable: ^0.0.7
-  navigation_without_context: ^0.0.4
-  firestore_db_impl: ^0.0.6
+  get_it_di_global_variable: ^0.0.8
+  navigation_without_context: ^0.0.5
+  firestore_db_impl: ^0.0.7
   geo_lat_lon: ^0.0.6
 
 
 #  geoflutterfire_plus: ^0.0.32
 
   equatable: ^2.0.8
-  cloud_firestore: ^6.5.0
+  cloud_firestore: ^6.6.0
   dartz: ^0.10.1
   bloc: ^9.2.1
   flutter_bloc: ^9.1.1
