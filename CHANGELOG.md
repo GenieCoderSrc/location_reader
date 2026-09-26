@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.9
+
+### Jun 15, 2026
+
+### ✨ Updated
+
+- Updated `firestore_db_impl` to 0.0.8
+- Updated `geo_lat_lon` to 0.0.7
+- Updated `equatable` to 3.0.0
+- Updated `cloud_firestore` to 6.10.1
+
 ## 0.0.8
 
 ### Jun 15, 2026
