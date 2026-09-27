@@ -13,11 +13,11 @@ dependencies:
   flutter:
     sdk: flutter
 
-  exception_type: ^0.0.5
-  i_tdd: ^0.0.4
+  exception_type: ^0.0.6
+  i_tdd: ^0.0.5
   get_it_di_global_variable: ^0.0.8
   navigation_without_context: ^0.0.5
-  firestore_db_impl: ^0.0.8
+  firestore_db_impl: ^0.0.9
   geo_lat_lon: ^0.0.7
 
 
