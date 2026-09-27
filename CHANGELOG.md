@@ -4,7 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## 0.0.9
 
-### Sep 26, 2026
+### Sep 27, 2026
+
+### 🐛 Fixed
+
+- Fixed `CityNameServiceImpl` and `CountryCodeServiceImpl` to use `Geocoding` instance for `placemarkFromCoordinates` calls.
 
 ### ✨ Updated
 

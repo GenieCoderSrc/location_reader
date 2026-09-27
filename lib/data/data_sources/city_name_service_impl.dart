@@ -4,13 +4,15 @@ import 'package:geocoding/geocoding.dart';
 import 'i_location_services/i_city_name_service.dart';
 
 class CityNameServiceImpl extends ICityNameService {
+  final Geocoding _geocoding = Geocoding();
+
   @override
   Future<String?> getCityName({
     required double lat,
     required double lon,
   }) async {
     try {
-      final Placemark placeMark = (await placemarkFromCoordinates(
+      final Placemark placeMark = (await _geocoding.placemarkFromCoordinates(
         lat,
         lon,
       )).first;
