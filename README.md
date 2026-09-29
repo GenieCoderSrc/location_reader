@@ -16,6 +16,8 @@
 Add the following to your `pubspec.yaml`:
 
 ```yaml
+resolution: workspace
+
 dependencies:
   location_reader: ^<latest_version>
 ```
