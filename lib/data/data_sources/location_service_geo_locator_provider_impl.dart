@@ -28,7 +28,6 @@ class LocationServiceGeoLocatorProviderImpl
             accuracy: desiredAccuracy,
             timeLimit: timeLimit,
           ),
-          forceAndroidLocationManager: forceAndroidLocationManager,
         );
       }
       return await getLastKnownPosition();
