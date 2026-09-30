@@ -24,9 +24,11 @@ class LocationServiceGeoLocatorProviderImpl
 
       if (serviceEnabled) {
         return await Geolocator.getCurrentPosition(
-          desiredAccuracy: desiredAccuracy,
+          locationSettings: LocationSettings(
+            accuracy: desiredAccuracy,
+            timeLimit: timeLimit,
+          ),
           forceAndroidLocationManager: forceAndroidLocationManager,
-          timeLimit: timeLimit,
         );
       }
       return await getLastKnownPosition();
