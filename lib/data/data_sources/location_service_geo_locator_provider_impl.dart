@@ -30,6 +30,9 @@ class LocationServiceGeoLocatorProviderImpl
         );
       }
       return await getLastKnownPosition();
+    } catch (e) {
+      debugPrint('_determinePosition | error: $e');
+      return await getLastKnownPosition();
     }
   }
 
