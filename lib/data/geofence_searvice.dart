@@ -83,7 +83,9 @@ class GeofenceService {
   /// Get the current position of the device
   Future<void> getCurrentPosition() async {
     position = await Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.best,
+      locationSettings: const LocationSettings(
+        accuracy: LocationAccuracy.best,
+      ),
     );
     debugPrint("LOCATION => ${position!.toJson()}");
     isReady = position != null;

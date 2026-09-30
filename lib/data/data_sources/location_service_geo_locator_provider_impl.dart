@@ -29,11 +29,7 @@ class LocationServiceGeoLocatorProviderImpl
           timeLimit: timeLimit,
         );
       }
-      return getLastKnownPosition();
-    } catch (e) {
-      debugPrint('_determinePosition | error: $e');
-      // appToast(msg: translateTxtWithoutContext(failed_to_get_location));
-      return getLastKnownPosition();
+      return await getLastKnownPosition();
     }
   }
 

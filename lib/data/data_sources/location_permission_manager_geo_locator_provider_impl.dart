@@ -38,7 +38,7 @@ class LocationPermissionManagerGeolocatorProviderImpl
         return true;
       } else {
         // Request permission if not granted
-        return requestLocationPermission();
+        return await requestLocationPermission();
       }
     } catch (e) {
       // Handle error
