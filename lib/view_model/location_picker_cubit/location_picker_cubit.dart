@@ -8,7 +8,7 @@ part 'location_picker_state.dart';
 
 class LocationPickerCubit extends Cubit<LocationPickerState> {
   LocationPickerCubit({required this.getCurrentLocation})
-    : super(const LocationPickerState());
+      : super(const LocationPickerState());
 
   final GetCurrentLocation getCurrentLocation;
 

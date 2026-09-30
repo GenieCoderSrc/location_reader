@@ -30,8 +30,7 @@ class CityNameBuilder extends StatelessWidget {
               if (state is CityNameLoaded) {
                 return Text(
                   state.cityName,
-                  style:
-                      textStyle ??
+                  style: textStyle ??
                       TextStyle(
                         // color: Colors.grey,
                         fontSize: 15.0,

@@ -21,7 +21,7 @@ class CountryCodeRepositoryImpl extends ICountryCodeRepository {
       late String? countryCode;
       final Position? currentLocation =
           await iLocationServiceGeoLocatorProvider.getLastKnownPosition() ??
-          await iLocationServiceGeoLocatorProvider.getCurrentLocation();
+              await iLocationServiceGeoLocatorProvider.getCurrentLocation();
 
       debugPrint(
         'GeoLocationRepository | getCurrentCountryCode | currentLocation: $currentLocation',

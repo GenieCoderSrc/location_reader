@@ -14,7 +14,7 @@ class CityNameCubit extends Cubit<CityNameState> {
   final LocationPickerCubit locationPickerCubit;
 
   CityNameCubit({required this.getCityName, required this.locationPickerCubit})
-    : super(const CityNameInitial());
+      : super(const CityNameInitial());
 
   Future<void> loadCityName({double? lat, double? lon}) async {
     emit(const CityNameLoading());

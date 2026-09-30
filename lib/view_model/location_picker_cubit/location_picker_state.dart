@@ -15,11 +15,12 @@ class LocationPickerState extends Equatable {
     LocationEntity? locationEntity,
     String? reportMsg,
     bool? isLoading,
-  }) => LocationPickerState(
-    locationEntity: locationEntity ?? this.locationEntity,
-    reportMsg: reportMsg ?? this.reportMsg,
-    isLoading: isLoading ?? this.isLoading,
-  );
+  }) =>
+      LocationPickerState(
+        locationEntity: locationEntity ?? this.locationEntity,
+        reportMsg: reportMsg ?? this.reportMsg,
+        isLoading: isLoading ?? this.isLoading,
+      );
 
   @override
   List<Object?> get props => [locationEntity, reportMsg, isLoading];

@@ -16,7 +16,8 @@ class LocationModel extends LocationEntity {
   final GeoFirePoint? geofPoint;
 
   LocationModel({double? lat, double? lon, this.geofPoint})
-    : super(lat: geofPoint?.latitude ?? lat, lon: geofPoint?.longitude ?? lon);
+      : super(
+            lat: geofPoint?.latitude ?? lat, lon: geofPoint?.longitude ?? lon);
 
   factory LocationModel.fromJson(Map<String, dynamic> json) {
     double? lat = (json['lat'] as num?)?.toDouble();

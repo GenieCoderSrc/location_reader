@@ -11,7 +11,7 @@ class CountryCodeCubit extends Cubit<CountryCodeState> {
   final GetCountryCode getCountryCode;
 
   CountryCodeCubit({required this.getCountryCode})
-    : super(const CountryCodeInitial());
+      : super(const CountryCodeInitial());
 
   Future<String> loadCountryCode() async {
     late String countryCode;

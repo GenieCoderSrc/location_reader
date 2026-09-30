@@ -16,7 +16,8 @@ class AddressServiceImpl extends IAddressService {
       final Placemark placeMark = (await _geocoding.placemarkFromCoordinates(
         lat,
         lon,
-      )).first;
+      ))
+          .first;
 
       debugPrint(
         'AddressServiceImpl | getAddress | address : ${placeMark.toString()}',

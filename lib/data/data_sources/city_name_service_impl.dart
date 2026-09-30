@@ -15,7 +15,8 @@ class CityNameServiceImpl extends ICityNameService {
       final Placemark placeMark = (await _geocoding.placemarkFromCoordinates(
         lat,
         lon,
-      )).first;
+      ))
+          .first;
 
       final String name = placeMark.name ?? '';
       final String subLocality = placeMark.subLocality?.trim() ?? '';

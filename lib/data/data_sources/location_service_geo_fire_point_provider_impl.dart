@@ -19,8 +19,8 @@ class LocationServiceGeoFirePointProviderImpl
   @override
   Future<GeoFirePoint?> getCurrentLocation() async {
     try {
-      final Position? currentLocation = await iLocationServiceGeoLocatorProvider
-          .getCurrentLocation();
+      final Position? currentLocation =
+          await iLocationServiceGeoLocatorProvider.getCurrentLocation();
 
       return iGeoFirePointConverter.getGeoFirePoint(currentLocation);
     } catch (e) {
@@ -34,7 +34,7 @@ class LocationServiceGeoFirePointProviderImpl
     try {
       final Position? currentLocation =
           await iLocationServiceGeoLocatorProvider.getLastKnownPosition() ??
-          await iLocationServiceGeoLocatorProvider.getCurrentLocation();
+              await iLocationServiceGeoLocatorProvider.getCurrentLocation();
 
       return iGeoFirePointConverter.getGeoFirePoint(currentLocation);
     } catch (e) {

@@ -12,7 +12,9 @@ class CountryCodeServiceImpl extends ICountryCodeService {
     required double lon,
   }) async {
     try {
-      return (await _geocoding.placemarkFromCoordinates(lat, lon)).first.isoCountryCode;
+      return (await _geocoding.placemarkFromCoordinates(lat, lon))
+          .first
+          .isoCountryCode;
     } catch (e) {
       debugPrint('CountryCodeServiceImpl | getCountryCode | error: $e');
       return null;
